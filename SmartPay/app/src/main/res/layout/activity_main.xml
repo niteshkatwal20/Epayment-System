@@ -182,21 +182,22 @@
             android:padding="10dp">
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="4">
 
                 <LinearLayout
-                    android:id="@+id/llRecharge"
+                    android:id="@+id/Recharge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="28dp"
+                        android:layout_height="23dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -213,20 +214,22 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Electricity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="23dp"
+                        android:layout_height="33dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:src="@drawable/ic_electricity" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -237,7 +240,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/llTrainTicket"
+                    android:id="@+id/Health"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -252,6 +255,7 @@
                         android:src="@drawable/health" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -262,7 +266,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/llFlightTicket"
+                    android:id="@+id/FlightTicket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -277,6 +281,7 @@
                         android:src="@drawable/airplane" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -298,7 +303,7 @@
                 android:weightSum="4">
 
                 <LinearLayout
-                    android:id="@+id/llBus"
+                    android:id="@+id/Bus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -313,6 +318,7 @@
                         android:src="@drawable/bus" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -323,6 +329,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -337,6 +344,7 @@
                         android:src="@drawable/tv" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -347,6 +355,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Internet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -361,6 +370,7 @@
                         android:src="@drawable/internet" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -371,6 +381,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Landline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -385,6 +396,7 @@
                         android:src="@drawable/ic_landline" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -406,7 +418,7 @@
                 android:weightSum="4">
 
                 <LinearLayout
-                    android:id="@+id/llMovieTicket"
+                    android:id="@+id/MovieTicket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -421,6 +433,7 @@
                         android:src="@drawable/movie" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -431,7 +444,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/llHotels"
+                    android:id="@+id/Hotels"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -446,6 +459,7 @@
                         android:src="@drawable/hotel" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -456,6 +470,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/School"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -470,16 +485,18 @@
                         android:src="@drawable/school" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="School"
+                        android:text="School Fee"
                         android:textColor="@color/icon_color"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/BankTransfer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -494,6 +511,7 @@
                         android:src="@drawable/bank" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -509,9 +527,9 @@
 
         </LinearLayout>
 
-        <include layout="@layout/online_shopping" />
+        <include layout="@layout/activity_shopping_online" />
 
-        <include layout="@layout/online_food" />
+        <include layout="@layout/activity_online_food" />
 
 
 

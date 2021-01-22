@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ShoppingOnline">
 
     <TextView
         android:layout_width="match_parent"
@@ -29,6 +32,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/hamrobazzar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -54,6 +58,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/flipkart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -79,6 +84,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lenskart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -104,6 +110,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/alibaba"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -129,6 +136,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/amazon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -154,6 +162,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ugbazzar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -179,6 +188,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/daraz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -208,5 +218,6 @@
 
 
     </HorizontalScrollView>
+
 
 </LinearLayout>

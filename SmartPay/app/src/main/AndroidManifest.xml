@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPay">
-        <activity android:name=".RechargePhone"></activity>
+        <activity android:name=".ShoppingOnline"></activity>
+        <activity android:name=".OnlineFood" />
+        <activity android:name=".toolbar" />
+        <activity android:name=".Schools" />
+        <activity android:name=".RechargePhone" />
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
