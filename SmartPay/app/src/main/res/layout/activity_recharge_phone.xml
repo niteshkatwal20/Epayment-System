@@ -8,7 +8,47 @@
     android:orientation="vertical"
     tools:context=".RechargePhone">
 
-    <include layout="@layout/activity_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:paddingRight="360dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:text="title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/logo_icon"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:src="@drawable/logo2"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+
     <LinearLayout
         android:id="@+id/llPayout1"
         android:layout_width="match_parent"
@@ -29,20 +69,21 @@
             android:gravity="center"
             android:padding="8dp"
             android:text="Topup"
-            android:textStyle="bold"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <View
-            android:layout_gravity="center"
             android:layout_width="70dp"
             android:layout_height="2dp"
+            android:layout_gravity="center"
             android:background="#000000" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
             android:layout_marginTop="20dp"
+            android:gravity="left"
             android:padding="8dp"
             android:text="Mobile(10 digits)/Landline(8 digits)"
             android:textColor="#000"
@@ -89,7 +130,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:paddingTop="10dp"
         android:id="@+id/Recharge"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -98,7 +138,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/blue_rounded_bg"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="10dp">
 
 
         <TextView

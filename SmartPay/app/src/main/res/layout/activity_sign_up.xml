@@ -52,9 +52,9 @@
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="Register Your Account Here"
-                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
@@ -207,7 +207,6 @@
                 android:background="@color/grey_light_secondary" />
 
 
-
             <TextView
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
@@ -244,6 +243,7 @@
 
 
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/signupline"
         android:layout_width="match_parent"

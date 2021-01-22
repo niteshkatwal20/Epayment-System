@@ -5,27 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class RechargePhone extends AppCompatActivity {
-
-    private ImageView back;
+public class SendMoney extends AppCompatActivity {
+    private ImageView backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recharge_phone);
+        setContentView(R.layout.activity_send_money);
+        backbtn=findViewById(R.id.backbtn);
 
-        back = findViewById(R.id.back);
+        //back btn onclicklistener event
 
-        back.setOnClickListener(new View.OnClickListener() {
+        backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RechargePhone.this, MainActivity.class);
+                Intent intent = new Intent(SendMoney.this, MainActivity.class);
                 startActivity(intent);
-
             }
         });
+
+
     }
 }
