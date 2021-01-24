@@ -14,7 +14,7 @@ public class SendMoney extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money);
-        backbtn=findViewById(R.id.backbtn);
+        backbtn=findViewById(R.id.backSender);
 
         //back btn onclicklistener event
 

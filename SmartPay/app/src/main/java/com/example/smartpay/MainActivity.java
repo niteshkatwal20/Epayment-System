@@ -82,19 +82,24 @@ public class MainActivity extends AppCompatActivity {
         Electricity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Electricity.class);
+                startActivity(intent);
 
             }
         });
-        Health.setOnClickListener(new View.OnClickListener() {
+        Health.setOnClickListener(new View.OnClickListener() {                                          
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this,Health.class);
+                startActivity(intent);
             }
         });
         FlightTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(MainActivity.this, FlightTicket.class);
+                startActivity(intent);
             }
         });
         BusTicket.setOnClickListener(new View.OnClickListener() {

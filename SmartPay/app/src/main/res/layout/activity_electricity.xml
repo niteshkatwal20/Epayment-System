@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".SendMoney">
+    tools:context=".Electricity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/backSender"
+            android:id="@+id/backelectricity"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:clickable="true"
@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_marginLeft="10dp"
-        android:background="@color/background"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:background="@drawable/grey_rounded_bg"
         android:orientation="vertical">
 
         <TextView
@@ -64,7 +64,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Send Money"
+            android:text="Pay Your Electricity Bill"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -77,7 +77,7 @@
 
 
         <EditText
-            android:id="@+id/edtSenderemail"
+            android:id="@+id/edtCustomerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -87,8 +87,7 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/edit_text_rounded"
             android:gravity="center"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="Customer Name"
             android:padding="16dp"
             android:textColor="@color/Tex"
             android:textColorHint="@color/textSub"
@@ -96,7 +95,25 @@
 
 
         <EditText
-            android:id="@+id/edtSendamount"
+            android:id="@+id/edtCustomerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_text_rounded"
+            android:gravity="center"
+            android:hint="Customer ID"
+            android:padding="16dp"
+            android:textColor="@color/Tex"
+            android:textColorHint="@color/textSub"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/edtelectricityamount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -115,7 +132,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtPurpose"
+            android:id="@+id/edtDepositerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -125,14 +142,14 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/edit_text_rounded"
             android:gravity="center"
-            android:hint="Purpose"
+            android:hint="Depositor Name"
             android:padding="16dp"
             android:textColor="@color/Tex"
             android:textColorHint="@color/textSub"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtRemarks"
+            android:id="@+id/edtDepositerNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -140,10 +157,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
             android:background="@drawable/edit_text_rounded"
             android:gravity="center"
-            android:hint="Remarks"
+            android:hint="Depositor Phone Number"
+            android:inputType="number"
+            android:lines="1"
             android:padding="16dp"
             android:textColor="@color/Tex"
             android:textColorHint="@color/textSub"
@@ -151,7 +169,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/btnSendMoney"
+        android:id="@+id/PayEleBill"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -169,12 +187,11 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Send Money"
+            android:text="Pay Bill"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
 
 </LinearLayout>

@@ -6,47 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".RechargePhone">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/white">
-
-        <ImageView
-            android:id="@+id/backRecharge"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:clickable="true"
-            android:paddingRight="360dp"
-            android:src="@drawable/back" />
-
-        <TextView
-            android:id="@+id/toolbarTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:text="title"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimary"
-            android:visibility="gone" />
-
-
-        <ImageView
-            android:id="@+id/logo_icon"
-            android:layout_width="160dp"
-            android:layout_height="30dp"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
-            android:src="@drawable/logo2"
-            android:visibility="visible" />
-
-
-    </RelativeLayout>
+    tools:context=".UserVerification">
 
 
     <LinearLayout
@@ -59,6 +19,16 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/grey_rounded_bg"
         android:orientation="vertical">
+        <ImageView
+            android:id="@+id/logo_icon"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:src="@drawable/logo2"
+            android:visibility="visible" />
 
         <TextView
             android:layout_width="match_parent"
@@ -68,13 +38,13 @@
             android:layout_marginRight="10dp"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Topup"
+            android:text="OTP Verification"
             android:textColor="#000"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <View
-            android:layout_width="70dp"
+            android:layout_width="300dp"
             android:layout_height="2dp"
             android:layout_gravity="center"
             android:background="#000000" />
@@ -85,31 +55,13 @@
             android:layout_marginTop="20dp"
             android:gravity="left"
             android:padding="8dp"
-            android:text="Mobile(10 digits)/Landline(8 digits)"
+            android:text="Check the Your Email to get the verification code  "
             android:textColor="#000"
             android:textSize="16sp" />
 
 
         <EditText
-            android:id="@+id/edtRechargeNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/head"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/edit_text_rounded"
-            android:gravity="center"
-            android:hint="Enter Phone Number"
-            android:inputType="number"
-            android:lines="1"
-            android:padding="16dp"
-            android:textColor="@color/Tex"
-            android:textColorHint="@color/textSub"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/edtRechargeamount"
+            android:id="@+id/edtVerificationCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -119,9 +71,7 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/edit_text_rounded"
             android:gravity="center"
-            android:hint="Enter Amount"
-            android:inputType="numberDecimal"
-            android:lines="1"
+            android:hint="Verification code"
             android:padding="16dp"
             android:textColor="@color/Tex"
             android:textColorHint="@color/textSub"
@@ -130,7 +80,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/Recharge"
+        android:id="@+id/SubmitCode"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -148,12 +98,11 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Proceed"
+            android:text="Submit"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
 
 </LinearLayout>

@@ -17,7 +17,7 @@ public class RechargePhone extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recharge_phone);
 
-        back = findViewById(R.id.back);
+        back = findViewById(R.id.backRecharge);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

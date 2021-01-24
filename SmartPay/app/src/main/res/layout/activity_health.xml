@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".SendMoney">
+    tools:context=".Health">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/backSender"
+            android:id="@+id/backHealth"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:clickable="true"
@@ -46,14 +47,12 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/llPayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
         android:layout_marginLeft="10dp"
-        android:background="@color/background"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:background="@drawable/grey_rounded_bg"
         android:orientation="vertical">
 
         <TextView
@@ -64,7 +63,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Send Money"
+            android:text="Pay Your Hospital Bill"
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -77,7 +76,7 @@
 
 
         <EditText
-            android:id="@+id/edtSenderemail"
+            android:id="@+id/edtHospitalName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -87,8 +86,43 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/edit_text_rounded"
             android:gravity="center"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="Hospital Name"
+            android:padding="16dp"
+            android:textColor="@color/Tex"
+            android:textColorHint="@color/textSub"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtPatientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_text_rounded"
+            android:gravity="center"
+            android:hint="Patient Name"
+            android:padding="16dp"
+            android:textColor="@color/Tex"
+            android:textColorHint="@color/textSub"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtBillNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_text_rounded"
+            android:gravity="center"
+            android:hint="Bill NO"
+            android:inputType="number"
+            android:lines="1"
             android:padding="16dp"
             android:textColor="@color/Tex"
             android:textColorHint="@color/textSub"
@@ -96,7 +130,7 @@
 
 
         <EditText
-            android:id="@+id/edtSendamount"
+            android:id="@+id/edtBillAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -114,44 +148,10 @@
             android:textColorHint="@color/textSub"
             android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/edtPurpose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/head"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/edit_text_rounded"
-            android:gravity="center"
-            android:hint="Purpose"
-            android:padding="16dp"
-            android:textColor="@color/Tex"
-            android:textColorHint="@color/textSub"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/edtRemarks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/head"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/edit_text_rounded"
-            android:gravity="center"
-            android:hint="Remarks"
-            android:padding="16dp"
-            android:textColor="@color/Tex"
-            android:textColorHint="@color/textSub"
-            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/btnSendMoney"
+        android:id="@+id/PayHospitalBill"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -169,7 +169,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Send Money"
+            android:text="Pay Now"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />

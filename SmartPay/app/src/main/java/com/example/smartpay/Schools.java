@@ -14,7 +14,7 @@ public class Schools extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schools);
-        ImageView btnback = findViewById(R.id.btnback);
+        ImageView btnback = findViewById(R.id.backSchool);
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
