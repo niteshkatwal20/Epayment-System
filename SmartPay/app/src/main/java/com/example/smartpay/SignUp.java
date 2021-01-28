@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class SignUp extends AppCompatActivity {
     private TextView SignIn, CreateAccount;
 
     private EditText Userfullname, Useremail, Userpassword, Userphoneno, Useraddress;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -42,6 +44,7 @@ public class SignUp extends AppCompatActivity {
         Userpassword = findViewById(R.id.txtUserPassword);
         Userphoneno = findViewById(R.id.txtUserphoneno);
         Useraddress = findViewById(R.id.txtUseraddress);
+        progressBar = findViewById(R.id.ProgressbarSignUp);
 
         CreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +111,7 @@ public class SignUp extends AppCompatActivity {
             Useraddress.requestFocus();
             return;
         }
-
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -122,20 +125,24 @@ public class SignUp extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(SignUp.this, "User has been registered sucessfully", Toast.LENGTH_LONG)
+                                        Toast.makeText(SignUp.this, "User has been registered successfully", Toast.LENGTH_LONG)
                                                 .show();
+                                        progressBar.setVisibility(View.VISIBLE);
+
                                         Intent intent = new Intent(SignUp.this, SignIn.class);
                                         startActivity(intent);
                                     } else {
-                                        Toast.makeText(SignUp.this, "Failed to register", Toast.LENGTH_SHORT)
+                                        Toast.makeText(SignUp.this, "Failed to register user", Toast.LENGTH_LONG)
                                                 .show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
 
                         } else {
-                            Toast.makeText(SignUp.this, "Failed to register", Toast.LENGTH_SHORT)
+                            Toast.makeText(SignUp.this, "Failed to register user", Toast.LENGTH_SHORT)
                                     .show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });

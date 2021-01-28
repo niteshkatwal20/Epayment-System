@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignIn extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class SignIn extends AppCompatActivity {
     private EditText Email, Password;
 
     private FirebaseAuth mAuth;
-
+    private ProgressBar progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class SignIn extends AppCompatActivity {
         Password = findViewById(R.id.edtPassword);
 
         mAuth = FirebaseAuth.getInstance();
+        progress = findViewById(R.id.ProgressbarSignIn);
 
         UserSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,14 +82,23 @@ public class SignIn extends AppCompatActivity {
             return;
         }
 
+        progress.setVisibility(View.VISIBLE);
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Intent intent = new Intent(SignIn.this, MainActivity.class);
-                    startActivity(intent);
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user.isEmailVerified()) {
+                        Intent intent = new Intent(SignIn.this, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        user.sendEmailVerification();
+                        Toast.makeText(SignIn.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();
+                    }
+
                 } else {
-                    Toast.makeText(SignIn.this, "Email and Password donot match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignIn.this, "Email and Password do not match", Toast.LENGTH_LONG).show();
                 }
             }
         });

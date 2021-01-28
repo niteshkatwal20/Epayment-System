@@ -171,7 +171,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
-
                     android:gravity="right"
                     android:padding="10dp"
                     android:text="Forgot password?"
@@ -181,6 +180,15 @@
 
             </RelativeLayout>
 
+            <ProgressBar
+                android:id="@+id/ProgressbarSignIn"
+                style="?android:attr/progressBarStyleLarge"
+               android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                />
 
             <TextView
                 android:id="@+id/UserSignIn"

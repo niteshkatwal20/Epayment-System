@@ -201,7 +201,15 @@
                 android:layout_height="1dp"
                 android:background="@color/grey_light_secondary" />
 
-
+            <ProgressBar
+                android:id="@+id/ProgressbarSignUp"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                />
             <TextView
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
