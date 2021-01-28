@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         paynow = findViewById(R.id.sendmoney);
         addmoney = findViewById(R.id.AddMoney);
-        payments = findViewById(R.id.Payments);
+        payments = findViewById(R.id.Profile);
         trans = findViewById(R.id.transactions);
 
         Recharge = findViewById(R.id.Recharge);
@@ -105,25 +105,31 @@ public class MainActivity extends AppCompatActivity {
         BusTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BusTicket.class);
+                startActivity(intent);
 
             }
         });
         Tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, Tv.class);
+                startActivity(intent);
             }
         });
         Internet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Internet.class);
+                startActivity(intent);
 
             }
         });
         Landline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, LandLine.class);
+                startActivity(intent);
             }
         });
         MovieTicket.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
         Hotels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, Hotels.class);
+                startActivity(intent);
             }
         });
         School.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +156,8 @@ public class MainActivity extends AppCompatActivity {
         BankTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, BankTransfer.class);
+                startActivity(intent);
             }
         });
 

@@ -85,7 +85,6 @@
                     android:gravity="left"
                     android:hint="Email"
                     android:lines="1"
-                    android:padding="10dp"
                     android:textColor="@color/Tex"
                     android:textColorHint="@color/textSub"
                     android:textSize="16sp" />
@@ -115,13 +114,9 @@
                     android:drawablePadding="16dp"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:padding="10dp"
                     android:textColor="@color/Tex"
                     android:textColorHint="@color/textSub"
-                    android:textSize="16sp"
-
-
-                    />
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
@@ -188,7 +183,7 @@
 
 
             <TextView
-                android:id="@+id/signin1"
+                android:id="@+id/UserSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/signinline"
@@ -232,7 +227,7 @@
             />
 
         <TextView
-            android:id="@+id/signup"
+            android:id="@+id/SigUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

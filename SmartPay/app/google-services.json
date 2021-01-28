@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "437405520502",
+    "firebase_url": "https://smartpay-e88ec-default-rtdb.firebaseio.com",
+    "project_id": "smartpay-e88ec",
+    "storage_bucket": "smartpay-e88ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437405520502:android:f3a7b2072fd1ce1c67c557",
+        "android_client_info": {
+          "package_name": "com.example.smartpay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437405520502-is2jm6iunsr2pb3ndigb0ju5vi2jv2nj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhUNcErZNFs0C38IHrpTPm1qamHObhlUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437405520502-is2jm6iunsr2pb3ndigb0ju5vi2jv2nj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
