@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout paynow, addmoney, payments, trans;
+    private LinearLayout paynow, addmoney, userprofile, trans;
 
     private LinearLayout Recharge, Electricity, Health, FlightTicket, BusTicket, Tv, Internet, Landline,
             MovieTicket, Hotels, School, BankTransfer;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         paynow = findViewById(R.id.sendmoney);
         addmoney = findViewById(R.id.AddMoney);
-        payments = findViewById(R.id.Profile);
+        userprofile = findViewById(R.id.Profile);
         trans = findViewById(R.id.transactions);
 
         Recharge = findViewById(R.id.Recharge);
@@ -70,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        userprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+            }
+        });
         //main menu onclicklisterner event
         Recharge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -234,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
                gotoUrl("http://www.bhoklagyo.com.np/");
            }
        });
+
     }
 
     private void gotoUrl(String s) {

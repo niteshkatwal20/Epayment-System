@@ -9,7 +9,13 @@
         android:roundIcon="@drawable/luncher"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPay">
-        <activity android:name=".Profile"></activity>
+        <activity
+            android:name=".SendOTPActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".ForgetPassword" />
+        <activity android:name=".Profile" />
         <activity android:name=".AddMoney" />
         <activity android:name=".LandLine" />
         <activity android:name=".Internet" />
@@ -21,7 +27,11 @@
         <activity android:name=".FlightTicket" />
         <activity android:name=".Health" />
         <activity android:name=".Electricity" />
-        <activity android:name=".UserVerification" />
+        <activity
+            android:name=".UserVerification"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity android:name=".SendMoney" />
         <activity android:name=".Schools" />
         <activity android:name=".RechargePhone" />

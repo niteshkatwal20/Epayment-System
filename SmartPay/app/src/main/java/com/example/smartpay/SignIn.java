@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignIn extends AppCompatActivity {
 
-    private TextView UserSignUp, ForgetPassword, UserSignIn;
+    private TextView UserSignUp, forgetPassword, UserSignIn;
     private EditText Email, Password;
 
     private FirebaseAuth mAuth;
@@ -32,7 +32,7 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         UserSignUp = findViewById(R.id.SigUp);
-        ForgetPassword = findViewById(R.id.forgotpass);
+        forgetPassword = findViewById(R.id.forgotpass);
         UserSignIn = findViewById(R.id.UserSignIn);
         Email = findViewById(R.id.edtemail);
         Password = findViewById(R.id.edtPassword);
@@ -45,6 +45,12 @@ public class SignIn extends AppCompatActivity {
             public void onClick(View view) {
                 UserLogin();
 
+            }
+        });
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignIn.this,ForgetPassword.class));
             }
         });
 
