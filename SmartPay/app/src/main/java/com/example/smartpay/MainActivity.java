@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout paynow, addmoney, logout, trans;
+    private LinearLayout paynow, addmoney, profile, trans;
 
     private LinearLayout Recharge, Electricity, Health, FlightTicket, BusTicket, Tv, Internet, Landline,
             MovieTicket, Hotels, School, BankTransfer;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         paynow = findViewById(R.id.sendmoney);
         addmoney = findViewById(R.id.AddMoney);
-        logout = findViewById(R.id.LogOut);
+        profile = findViewById(R.id.ProfileUser);
         trans = findViewById(R.id.transactions);
 
         Recharge = findViewById(R.id.Recharge);
@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, SignIn.class));
+          Intent intent =new Intent(MainActivity.this,UserProfile.class);
+          startActivity(intent);
             }
         });
         //main menu onclicklisterner event
