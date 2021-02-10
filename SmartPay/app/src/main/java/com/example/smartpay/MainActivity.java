@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout paynow, addmoney, userprofile, trans;
+    private LinearLayout paynow, addmoney, logout, trans;
 
     private LinearLayout Recharge, Electricity, Health, FlightTicket, BusTicket, Tv, Internet, Landline,
             MovieTicket, Hotels, School, BankTransfer;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         paynow = findViewById(R.id.sendmoney);
         addmoney = findViewById(R.id.AddMoney);
-        userprofile = findViewById(R.id.Profile);
+        logout = findViewById(R.id.LogOut);
         trans = findViewById(R.id.transactions);
 
         Recharge = findViewById(R.id.Recharge);
@@ -70,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        userprofile.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Profile.class);
-                startActivity(intent);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, SignIn.class));
             }
         });
         //main menu onclicklisterner event

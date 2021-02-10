@@ -18,7 +18,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/paperplane" />
 
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="OTP Verification"
+            android:text="@string/otp_verification"
             android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="50dp"
             android:gravity="center"
-            android:text="We will send you an OTP this mobile number"
+            android:text="@string/we_will_send_you_an_otp_this_mobile_number"
             android:textColor="#000000"
             android:textSize="17sp" />
 
@@ -48,7 +48,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="Enter the Mobile Number"
+            android:text="@string/enter_the_mobile_number"
             android:textColor="#000000"
             android:textSize="18sp" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
-                android:text="+977-"
+                android:text="@string/_977"
                 android:textSize="16sp" />
 
             <EditText
@@ -70,9 +70,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:background="@null"
-                android:hint="1234567890"
+                android:hint="@string/_1234567890"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
+                android:inputType="number"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
 
@@ -87,18 +88,31 @@
             android:background="#000000"
             android:paddingLeft="70dp" />
 
-        <TextView
-            android:id="@+id/btnSendOTP"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_margin="30dp"
-            android:background="@drawable/blue_rounded_bg"
-            android:gravity="center"
-            android:text="Send OTP"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnSendOTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/blue_rounded_bg"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="@string/send_otp"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/SenOTPprogressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+
 
     </LinearLayout>
 </ScrollView>

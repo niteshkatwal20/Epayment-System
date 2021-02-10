@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:437405520502:android:f3a7b2072fd1ce1c67c557",
+        "mobilesdk_app_id": "1:437405520502:android:59950fbbf4cdb46a67c557",
         "android_client_info": {
           "package_name": "com.example.smartpay"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "437405520502-kg616v8cpkolhgeldffagdo6btd1fdor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartpay",
+            "certificate_hash": "26bde85a471a28d494a90953a25c7def0ec5d371"
+          }
+        },
         {
           "client_id": "437405520502-is2jm6iunsr2pb3ndigb0ju5vi2jv2nj.apps.googleusercontent.com",
           "client_type": 3
