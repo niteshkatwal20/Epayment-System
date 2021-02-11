@@ -77,7 +77,7 @@
 
 
         <EditText
-            android:id="@+id/edtSenderemail"
+            android:id="@+id/edtReceiverEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -96,7 +96,7 @@
 
 
         <EditText
-            android:id="@+id/edtSendamount"
+            android:id="@+id/edtSendAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"

@@ -63,7 +63,13 @@ public class MainActivity extends AppCompatActivity {
         foodexpress = findViewById(R.id.foodexpress);
 
 
-        // send money event onclicklistener
+        trans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, History.class);
+                startActivity(intent);
+            }
+        });
         paynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-          Intent intent =new Intent(MainActivity.this,UserProfile.class);
-          startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, UserProfile.class);
+                startActivity(intent);
             }
         });
         //main menu onclicklisterner event
@@ -96,10 +102,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Health.setOnClickListener(new View.OnClickListener() {                                          
+        Health.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Health.class);
+                Intent intent = new Intent(MainActivity.this, Health.class);
                 startActivity(intent);
             }
         });
@@ -225,29 +231,36 @@ public class MainActivity extends AppCompatActivity {
                 gotoUrl("https://911foodexpress.com/");
             }
         });
-       foodmandu.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               gotoUrl("https://foodmandu.com/");
-           }
-       });
-       foodmario.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               gotoUrl("https://foodmario.com/");
-           }
-       });
-       bhoklago.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               gotoUrl("http://www.bhoklagyo.com.np/");
-           }
-       });
+        foodmandu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl("https://foodmandu.com/");
+            }
+        });
+        foodmario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl("https://foodmario.com/");
+            }
+        });
+        bhoklago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl("http://www.bhoklagyo.com.np/");
+            }
+        });
+        addmoney.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddMoney.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
     private void gotoUrl(String s) {
-        Uri uri=Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 }

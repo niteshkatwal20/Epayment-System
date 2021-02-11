@@ -96,7 +96,7 @@ public class SignIn extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user.isEmailVerified()) {
-                        Intent intent = new Intent(SignIn.this, SendOTPActivity.class);
+                        Intent intent = new Intent(SignIn.this, MainActivity.class);
                         startActivity(intent);
                     } else {
                         user.sendEmailVerification();

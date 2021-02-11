@@ -13,7 +13,9 @@
         android:roundIcon="@drawable/luncher"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPay">
-        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".SendMoneyHistory"></activity>
+        <activity android:name=".History" />
+        <activity android:name=".UserProfile" />
         <activity
             android:name=".SendOTPActivity"
             android:screenOrientation="portrait"
