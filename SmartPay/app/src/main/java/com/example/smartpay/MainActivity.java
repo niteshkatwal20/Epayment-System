@@ -8,7 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.smartpay.SendMoney.SendMoney;
+import com.example.smartpay.AddMoney.AddMoney;
+import com.example.smartpay.landline.LandLine;
+import com.example.smartpay.recharge.RechargePhone;
+import com.example.smartpay.schoolfee.Schools;
+import com.example.smartpay.user.UserProfile;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -97,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         Electricity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Electricity.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.electricitypayment.Electricity.class);
                 startActivity(intent);
 
             }
@@ -105,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         Health.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Health.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.hospitalbill.Health.class);
                 startActivity(intent);
             }
         });
@@ -113,14 +118,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, FlightTicket.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.flightpayment.FlightTicket.class);
                 startActivity(intent);
             }
         });
         BusTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, BusTicket.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.buspayment.BusTicket.class);
                 startActivity(intent);
 
             }
@@ -128,14 +133,14 @@ public class MainActivity extends AppCompatActivity {
         Tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Tv.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.tvpayment.Tv.class);
                 startActivity(intent);
             }
         });
         Internet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Internet.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.internet.Internet.class);
                 startActivity(intent);
 
             }
@@ -156,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         Hotels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Hotels.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.hotelpayment.Hotels.class);
                 startActivity(intent);
             }
         });
@@ -171,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         BankTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, BankTransfer.class);
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.banktransfer.BankTransfer.class);
                 startActivity(intent);
             }
         });

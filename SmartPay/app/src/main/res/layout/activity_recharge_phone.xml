@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".RechargePhone">
+    tools:context=".recharge.RechargePhone">
 
 
     <RelativeLayout
@@ -15,13 +15,6 @@
         android:layout_marginTop="10dp"
         android:background="@color/white">
 
-        <ImageView
-            android:id="@+id/backRecharge"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:clickable="true"
-            android:paddingRight="360dp"
-            android:src="@drawable/back" />
 
         <TextView
             android:id="@+id/toolbarTitle"
@@ -155,5 +148,17 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/backRecharge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/blue_rounded_bg"
+        android:gravity="center"
+        android:padding="1dp"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -13,40 +13,53 @@
         android:roundIcon="@drawable/luncher"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPay">
-        <activity android:name=".SendMoneyHistory"></activity>
+        <activity android:name=".tvpayment.TVBillPaymentHistory"></activity>
+        <activity android:name=".schoolfee.SchoolFeePaymentHisotry" />
+        <activity android:name=".recharge.RechargePhoneHistory" />
+        <activity android:name=".Movie.MovieTicketPaymentHistory" />
+        <activity android:name=".landline.LandlinePaymentHistory" />
+        <activity android:name=".internet.InternetPaymentHistory" />
+        <activity android:name=".hotelpayment.HotelPaymentHistory" />
+        <activity android:name=".hospitalbill.HospitalPaymentHistory" />
+        <activity android:name=".flightpayment.FlightPaymentHistory" />
+        <activity android:name=".electricitypayment.ElectricityPaymentHistory" />
+        <activity android:name=".buspayment.BusHistory" />
+        <activity android:name=".banktransfer.BankTransferHistory" />
+        <activity android:name=".AddMoney.AddMoneyHistory" />
+        <activity android:name=".SendMoney.SendMoneyHistory" />
         <activity android:name=".History" />
-        <activity android:name=".UserProfile" />
+        <activity android:name=".user.UserProfile" />
         <activity
-            android:name=".SendOTPActivity"
+            android:name=".user.SendOTPActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ForgetPassword" />
-        <activity android:name=".AddMoney" />
-        <activity android:name=".LandLine" />
-        <activity android:name=".Internet" />
-        <activity android:name=".Tv" />
-        <activity android:name=".BankTransfer" />
-        <activity android:name=".Hotels" />
-        <activity android:name=".BusTicket" />
-        <activity android:name=".MovieTicket" />
-        <activity android:name=".FlightTicket" />
-        <activity android:name=".Health" />
-        <activity android:name=".Electricity" />
+        <activity android:name=".user.ForgetPassword" />
+        <activity android:name=".AddMoney.AddMoney" />
+        <activity android:name=".landline.LandLine" />
+        <activity android:name=".internet.Internet" />
+        <activity android:name=".tvpayment.Tv" />
+        <activity android:name=".banktransfer.BankTransfer" />
+        <activity android:name=".hotelpayment.Hotels" />
+        <activity android:name=".buspayment.BusTicket" />
+        <activity android:name=".Movie.MovieTicket" />
+        <activity android:name=".flightpayment.FlightTicket" />
+        <activity android:name=".hospitalbill.Health" />
+        <activity android:name=".electricitypayment.Electricity" />
         <activity
-            android:name=".UserVerification"
+            android:name=".user.UserVerification"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".SendMoney" />
-        <activity android:name=".Schools" />
-        <activity android:name=".RechargePhone" />
-        <activity android:name=".SignIn">
+        <activity android:name=".SendMoney.SendMoney" />
+        <activity android:name=".schoolfee.Schools" />
+        <activity android:name=".recharge.RechargePhone" />
+        <activity android:name=".user.SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp" />
+        <activity android:name=".user.SignUp" />
         <activity android:name=".MainActivity" />
     </application>
 

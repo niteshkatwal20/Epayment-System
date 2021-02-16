@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".UserVerification">
+    tools:context=".user.UserVerification">
 
 
     <LinearLayout
