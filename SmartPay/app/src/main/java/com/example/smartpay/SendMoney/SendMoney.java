@@ -101,7 +101,6 @@ public class SendMoney extends AppCompatActivity {
         if (!TextUtils.isEmpty(sendEmail)) {
             SendMoneyModel data = new SendMoneyModel(id, sendEmail, sendAmount, purpose, remarks);
             reference.child(id).setValue(data);
-            Toast.makeText(this, "Your Transaction has been completed", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SendMoney.this, SendOTPActivity.class);
             startActivity(intent);
         } else {

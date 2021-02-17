@@ -110,7 +110,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtBillNo"
+            android:id="@+id/edtHospitalBillNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
