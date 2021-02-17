@@ -35,20 +35,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="50dp"
-            android:gravity="center"
-            android:text="@string/we_will_send_you_an_otp_this_mobile_number"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="@string/enter_the_mobile_number"
+            android:text="Please Enter the Mobile Number So We Can Confirm your Number to send OTP "
             android:textColor="#000000"
             android:textSize="18sp" />
 
@@ -70,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:background="@null"
-                android:hint="@string/_1234567890"
+                android:hint="1234567890"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"

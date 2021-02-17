@@ -6,9 +6,9 @@
     <string name="resend_otp">RESEND OTP</string>
     <string name="submit">Submit</string>
     <string name="we_will_send_you_an_otp_this_mobile_number">We will send you an OTP this mobile number</string>
-    <string name="enter_the_mobile_number">Enter the Mobile Number</string>
+    <string name="enter_the_mobile_number">Please Enter the Mobile Number So We Can Confirm your Number to send OTP </string>
     <string name="_1234567890">1234567890</string>
     <string name="_977">+977-</string>
-    <string name="send_otp">Send OTP</string>
+    <string name="send_otp">Confirm</string>
     <string name="enter_the_otp_send_to_your_mobile_number">Enter the OTP Send to your Mobile Number</string>
 </resources>

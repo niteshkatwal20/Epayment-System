@@ -2,10 +2,12 @@ package com.example.smartpay.buspayment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,16 +15,24 @@ import android.widget.Toast;
 
 import com.example.smartpay.MainActivity;
 import com.example.smartpay.R;
+import com.example.smartpay.user.SendOTPActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+
 public class BusTicket extends AppCompatActivity {
-    private EditText edtFrom, edtTo, edtPassengerName, edtBusName, edtTicketNo, edtDepDate, edtPassengerPhone;
+    private EditText edtFrom, edtTo, edtPassengerName, edtBusName, edtTicketNo, edtPassengerPhone;
     private LinearLayout edtPayBusFare;
     private ImageView btnBackBus;
+
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+
     private EditText edtbusfare;
+    private EditText edtNoofpass;
+
+    final Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +45,10 @@ public class BusTicket extends AppCompatActivity {
         edtPassengerName = findViewById(R.id.edtPassengerName);
         edtBusName = findViewById(R.id.edtBussName);
         edtTicketNo = findViewById(R.id.edtTicketNo);
-        edtDepDate = findViewById(R.id.edtDepartureDate);
         edtPassengerPhone = findViewById(R.id.edtPassangerNumber);
         edtPayBusFare = findViewById(R.id.PayBusBill);
         edtbusfare = findViewById(R.id.edtAmountBus);
-
+        edtNoofpass = findViewById(R.id.edtNoofPassanger);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("BusFare");
 
@@ -58,15 +67,18 @@ public class BusTicket extends AppCompatActivity {
                 PayBusTicket();
             }
         });
+
+
     }
+
 
     private void PayBusTicket() {
         String from = edtFrom.getText().toString().trim();
         String to = edtTo.getText().toString().trim();
         String passengername = edtPassengerName.getText().toString().trim();
+        String noofpassenger = edtNoofpass.getText().toString().trim();
         String busname = edtBusName.getText().toString().trim();
         String ticketno = edtTicketNo.getText().toString().trim();
-        String depdate = edtDepDate.toString().trim();
         String passangerno = edtPassengerPhone.getText().toString().trim();
         String busfare = edtbusfare.getText().toString().trim();
         String id = databaseReference.push().getKey();
@@ -96,9 +108,14 @@ public class BusTicket extends AppCompatActivity {
             edtTicketNo.requestFocus();
             return;
         }
-        if (depdate.isEmpty()) {
-            edtDepDate.setError("Please Enter the Departure Date");
-            edtDepDate.requestFocus();
+        if (noofpassenger.isEmpty()) {
+            edtNoofpass.setError("Please Enter the Number of Passenger");
+            edtNoofpass.requestFocus();
+            return;
+        }
+        if (noofpassenger.length() > 1) {
+            edtNoofpass.setError("Maximum No of passenger can be booked by one user is 9");
+            edtNoofpass.requestFocus();
             return;
         }
         if (passangerno.isEmpty()) {
@@ -107,7 +124,15 @@ public class BusTicket extends AppCompatActivity {
             return;
         }
         if (passangerno.length() < 10) {
-            edtPassengerPhone.setError("Mobile Number Must be 10 digit");
+            edtPassengerPhone.setError("Mobile Must be 10 digits");
+            edtPassengerPhone.requestFocus();
+            return;
+        }
+
+        if (passangerno.length() > 10) {
+            edtPassengerPhone.setError("Mobile Must be 10 digits");
+            edtPassengerPhone.requestFocus();
+            return;
         }
         if (busfare.isEmpty()) {
             edtbusfare.setError("Enter the amount");
@@ -115,11 +140,13 @@ public class BusTicket extends AppCompatActivity {
             return;
         }
         if (!TextUtils.isEmpty(passengername)) {
-            BusModel busModel = new BusModel(id, from, to, passengername, busname, ticketno, depdate, passangerno, busfare);
+            BusModel busModel = new BusModel(id, from, to, passengername, noofpassenger, busname, ticketno, passangerno, busfare);
             databaseReference.child(id).setValue(busModel);
-            Toast.makeText(this, "Your Transaction has been completed ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(BusTicket.this, MainActivity.class);
+//            Toast.makeText(this, "Your Transaction has been completed ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(BusTicket.this, SendOTPActivity.class);
             startActivity(intent);
+        } else {
+            Toast.makeText(this, "Something Went Wrong!!!!!!", Toast.LENGTH_SHORT).show();
         }
 
     }

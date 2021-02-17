@@ -101,9 +101,11 @@ public class UserVerification extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                     CodeSubmitBtn.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful()) {
+                                        Toast.makeText(UserVerification.this, "Your Transaction is Successful", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
+
 
                                     } else {
                                         Toast.makeText(UserVerification.this, "The Verification You Entered is Invalid", Toast.LENGTH_SHORT).show();

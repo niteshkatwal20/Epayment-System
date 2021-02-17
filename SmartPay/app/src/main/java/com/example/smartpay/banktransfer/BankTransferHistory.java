@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.smartpay.R;
 import com.google.firebase.database.DataSnapshot;
@@ -51,7 +52,7 @@ public class BankTransferHistory extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(BankTransferHistory.this, "Something Went Wrong !!!!!", Toast.LENGTH_SHORT).show();
             }
         });
     }

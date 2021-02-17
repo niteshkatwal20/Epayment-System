@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.smartpay.MainActivity;
 import com.example.smartpay.R;
+import com.example.smartpay.user.SendOTPActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -87,8 +88,7 @@ public class AddMoney extends AppCompatActivity {
 
             AddMoneyModel add = new AddMoneyModel(id, addMoneyAccount, addMoneyBankname, addMoneyAmount, addMoneyRemarks);
             databaseReference.child(id).setValue(add);
-            Toast.makeText(this, "Your Transaction has been completed", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(AddMoney.this, MainActivity.class);
+            Intent intent = new Intent(AddMoney.this, SendOTPActivity.class);
             startActivity(intent);
 
         } else {

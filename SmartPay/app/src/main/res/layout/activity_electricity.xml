@@ -78,7 +78,7 @@
 
 
         <EditText
-            android:id="@+id/edtCustomerName"
+            android:id="@+id/edtElecCustomerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -96,7 +96,7 @@
 
 
         <EditText
-            android:id="@+id/edtCustomerId"
+            android:id="@+id/edtElecCustomerId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -133,7 +133,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtDepositerName"
+            android:id="@+id/edtElecDepositerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"
@@ -150,7 +150,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtDepositerNumber"
+            android:id="@+id/edtElecDepositerNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/head"

@@ -173,7 +173,24 @@
                 android:textColor="@color/Tex"
                 android:textColorHint="@color/textSub"
                 android:textSize="16sp" />
-
+            <EditText
+                android:id="@+id/edtNoofPassanger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+               android:inputType="number"
+                android:maxLength="1"
+                android:hint="No Of Persons"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
 
             e
 
@@ -208,24 +225,6 @@
                 android:gravity="center"
                 android:hint="Ticket Number"
                 android:inputType="number"
-                android:padding="16dp"
-                android:textColor="@color/Tex"
-                android:textColorHint="@color/textSub"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/edtDepartureDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/head"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/edit_text_rounded"
-                android:gravity="center"
-                android:hint="Departure Date"
-                android:inputType="date"
                 android:padding="16dp"
                 android:textColor="@color/Tex"
                 android:textColorHint="@color/textSub"

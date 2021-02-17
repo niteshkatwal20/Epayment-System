@@ -58,4 +58,6 @@ public class BankTransferAdapter extends RecyclerView.Adapter<BankTransferAdapte
             BankDepositorNo = (TextView) itemView.findViewById(R.id.txtBankTransDepNoHis);
         }
     }
+
+
 }

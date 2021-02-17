@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.smartpay.MainActivity;
 import com.example.smartpay.R;
+import com.example.smartpay.user.SendOTPActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -101,7 +102,7 @@ public class SendMoney extends AppCompatActivity {
             SendMoneyModel data = new SendMoneyModel(id, sendEmail, sendAmount, purpose, remarks);
             reference.child(id).setValue(data);
             Toast.makeText(this, "Your Transaction has been completed", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SendMoney.this, MainActivity.class);
+            Intent intent = new Intent(SendMoney.this, SendOTPActivity.class);
             startActivity(intent);
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.smartpay.MainActivity;
 import com.example.smartpay.R;
+import com.example.smartpay.user.SendOTPActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -50,22 +51,22 @@ public class BankTransfer extends AppCompatActivity {
             }
         });
 
-bankTransfer.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        BankTransferSubmit();
-    }
-});
+        bankTransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BankTransferSubmit();
+            }
+        });
     }
 
     private void BankTransferSubmit() {
 
-        String bankname=edtBankName.getText().toString().trim();
-        String bankaccountno=edtAccountNo.getText().toString().trim();
-        String bankamount=edtBankAmount.getText().toString().trim();
-        String bankdepositername=edtBankDepositerName.getText().toString().trim();
-        String bankdepositernumber=edtBankDepositerPhone.getText().toString().trim();
-        String id=reference.push().getKey();
+        String bankname = edtBankName.getText().toString().trim();
+        String bankaccountno = edtAccountNo.getText().toString().trim();
+        String bankamount = edtBankAmount.getText().toString().trim();
+        String bankdepositername = edtBankDepositerName.getText().toString().trim();
+        String bankdepositernumber = edtBankDepositerPhone.getText().toString().trim();
+        String id = reference.push().getKey();
 
 
         if (bankname.isEmpty()) {
@@ -95,13 +96,24 @@ bankTransfer.setOnClickListener(new View.OnClickListener() {
             return;
 
         }
+        if (bankdepositernumber.length() < 10) {
+            edtBankDepositerPhone.setError("Mobile Must be 10 digits");
+            edtBankDepositerPhone.requestFocus();
+            return;
+        }
+
+        if (bankdepositernumber.length() > 10) {
+            edtBankDepositerPhone.setError("Mobile Must be 10 digits");
+            edtBankDepositerPhone.requestFocus();
+            return;
+        }
 
         if (!TextUtils.isEmpty(bankname)) {
 
-            BankTransferModel add = new BankTransferModel(id, bankname, bankaccountno, bankamount, bankdepositername,bankdepositernumber);
+            BankTransferModel add = new BankTransferModel(id, bankname, bankaccountno, bankamount, bankdepositername, bankdepositernumber);
             reference.child(id).setValue(add);
             Toast.makeText(this, "Your Transaction has been completed", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(BankTransfer.this, MainActivity.class);
+            Intent intent = new Intent(BankTransfer.this, SendOTPActivity.class);
             startActivity(intent);
 
         } else {

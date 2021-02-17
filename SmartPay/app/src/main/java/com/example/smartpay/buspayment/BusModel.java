@@ -1,19 +1,19 @@
 package com.example.smartpay.buspayment;
 
 public class BusModel {
-    public String id, from, to, passengername, busname, ticketno, depdate, passangerno,busfare;
+    public String id, from, to, passengername, noofpassenger, busname, ticketno,passangerno, busfare;
 
     public BusModel() {
     }
 
-    public BusModel(String id, String from, String to, String passengername, String busname, String ticketno, String depdate, String passangerno, String busfare) {
+    public BusModel(String id, String from, String to, String passengername, String noofpassenger, String busname, String ticketno,String passangerno, String busfare) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.passengername = passengername;
+        this.noofpassenger = noofpassenger;
         this.busname = busname;
         this.ticketno = ticketno;
-        this.depdate = depdate;
         this.passangerno = passangerno;
         this.busfare = busfare;
     }
@@ -50,6 +50,14 @@ public class BusModel {
         this.passengername = passengername;
     }
 
+    public String getNoofpassenger() {
+        return noofpassenger;
+    }
+
+    public void setNoofpassenger(String noofpassenger) {
+        this.noofpassenger = noofpassenger;
+    }
+
     public String getBusname() {
         return busname;
     }
@@ -66,13 +74,7 @@ public class BusModel {
         this.ticketno = ticketno;
     }
 
-    public String getDepdate() {
-        return depdate;
-    }
 
-    public void setDepdate(String depdate) {
-        this.depdate = depdate;
-    }
 
     public String getPassangerno() {
         return passangerno;

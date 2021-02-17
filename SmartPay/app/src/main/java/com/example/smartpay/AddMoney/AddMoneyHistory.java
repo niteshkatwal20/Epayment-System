@@ -18,20 +18,21 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AddMoneyHistory extends AppCompatActivity {
-    DatabaseReference historyReference;
+    private DatabaseReference historyReference;
     private RecyclerView addMoneyHistory;
-    ArrayList<AddMoneyModel> addMoneyModelArrayList;
-    AddMoneyAdapter addMoneyAdapter;
+    private ArrayList<AddMoneyModel> addMoneyModelArrayList;
+    private AddMoneyAdapter addMoneyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_money_history);
+
         historyReference = FirebaseDatabase.getInstance().getReference().child("AddMoney");
         addMoneyHistory = findViewById(R.id.AddMoneyHistory);
 
         addMoneyHistory.setLayoutManager(new LinearLayoutManager(this));
-        addMoneyModelArrayList =new ArrayList<AddMoneyModel>();
+        addMoneyModelArrayList = new ArrayList<AddMoneyModel>();
 
         historyReference.addValueEventListener(new ValueEventListener() {
             @Override
