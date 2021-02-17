@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.smartpay.Movie.MovieTicket;
 import com.example.smartpay.SendMoney.SendMoney;
 import com.example.smartpay.AddMoney.AddMoney;
+import com.example.smartpay.hotelpayment.Hotels;
 import com.example.smartpay.landline.LandLine;
 import com.example.smartpay.recharge.RechargePhone;
 import com.example.smartpay.schoolfee.Schools;
@@ -155,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
         MovieTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, com.example.smartpay.Movie.MovieTicket.class);
+                startActivity(intent);
             }
         });
         Hotels.setOnClickListener(new View.OnClickListener() {

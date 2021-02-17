@@ -112,7 +112,6 @@ public class BankTransfer extends AppCompatActivity {
 
             BankTransferModel add = new BankTransferModel(id, bankname, bankaccountno, bankamount, bankdepositername, bankdepositernumber);
             reference.child(id).setValue(add);
-            Toast.makeText(this, "Your Transaction has been completed", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BankTransfer.this, SendOTPActivity.class);
             startActivity(intent);
 

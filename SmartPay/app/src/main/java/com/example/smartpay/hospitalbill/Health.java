@@ -66,7 +66,7 @@ public class Health extends AppCompatActivity {
         String hospitalname = HospitalName.getText().toString().trim();
         String patientname = PatientName.getText().toString().trim();
         String hospitalbillno = HospitalBillNo.getText().toString().trim();
-        String hospitalbillamount = HospitalBillNo.getText().toString().trim();
+        String hospitalbillamount = HospitalBillAmount.getText().toString().trim();
 
         String id = databaseReference.push().getKey();
         if (hospitalname.isEmpty()) {

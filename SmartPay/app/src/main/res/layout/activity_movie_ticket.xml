@@ -128,8 +128,6 @@
             android:background="@drawable/edit_text_rounded"
             android:gravity="center"
             android:hint="Seat No"
-            android:inputType="number"
-            android:lines="1"
             android:padding="16dp"
             android:textColor="@color/Tex"
             android:textColorHint="@color/textSub"
