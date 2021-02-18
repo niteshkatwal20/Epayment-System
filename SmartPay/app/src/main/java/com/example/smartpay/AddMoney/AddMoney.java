@@ -88,9 +88,10 @@ public class AddMoney extends AppCompatActivity {
 
             AddMoneyModel add = new AddMoneyModel(id, addMoneyAccount, addMoneyBankname, addMoneyAmount, addMoneyRemarks);
             databaseReference.child(id).setValue(add);
+
             Intent intent = new Intent(AddMoney.this, SendOTPActivity.class);
             startActivity(intent);
-
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

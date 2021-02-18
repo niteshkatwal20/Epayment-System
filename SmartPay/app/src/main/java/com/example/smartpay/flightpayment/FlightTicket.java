@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FlightTicket extends AppCompatActivity {
     private ImageView back;
-    private EditText from, to, date, noofpassanger, FlightNo, NameofPassenger, TicketNo, price;
+    private EditText from, to, date, noofpassanger, FlightNo, NameofPassenger, Passengerno, TicketNo, price;
     private LinearLayout payflight;
 
     private FirebaseDatabase database;
@@ -35,12 +35,13 @@ public class FlightTicket extends AppCompatActivity {
         from = findViewById(R.id.edtFrom);
         to = findViewById(R.id.edtTo);
         date = findViewById(R.id.edtDate);
-        noofpassanger = findViewById(R.id.edtTraveller);
+        noofpassanger = findViewById(R.id.edtNoofPassanger);
         price = findViewById(R.id.edtFlightAmount);
         payflight = findViewById(R.id.PayFlightTicket);
         FlightNo = findViewById(R.id.edtFlightNo);
         NameofPassenger = findViewById(R.id.edtTraveller);
         TicketNo = findViewById(R.id.edtFlightTicketNo);
+        Passengerno = findViewById(R.id.edtPassangerNumber);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("PlaneFare");
@@ -65,12 +66,32 @@ public class FlightTicket extends AppCompatActivity {
         String flightFrom = from.getText().toString().trim();
         String flightTo = to.getText().toString().trim();
         String flightDate = date.getText().toString().trim();
-        String fLightPassangerNo = noofpassanger.getText().toString().trim();
+        String fLightPassangerNo = Passengerno.getText().toString().trim();
         String flightPassangerName = NameofPassenger.getText().toString().trim();
         String flightNo = FlightNo.getText().toString().trim();
         String flightTicketNo = TicketNo.getText().toString().trim();
         String flightAmount = price.getText().toString().trim();
+        String flightNoofPass = noofpassanger.getText().toString().trim();
         String id = databaseReference.push().getKey();
+
+
+        if (fLightPassangerNo.isEmpty()) {
+            Passengerno.setError("Please Enter the Depositor Number!");
+            Passengerno.requestFocus();
+            return;
+
+        }
+        if (fLightPassangerNo.length() < 10) {
+            Passengerno.setError("Mobile Must be 10 digits");
+            Passengerno.requestFocus();
+            return;
+        }
+
+        if (flightNoofPass.length() > 10) {
+            Passengerno.setError("Mobile Must be 10 digits");
+            Passengerno.requestFocus();
+            return;
+        }
 
         if (flightFrom.isEmpty()) {
             from.setError("Flied should be empty");
@@ -115,10 +136,12 @@ public class FlightTicket extends AppCompatActivity {
         }
 
         if (!TextUtils.isEmpty(flightFrom)) {
-            FlightModel model = new FlightModel(id, flightFrom, flightTo, flightDate, fLightPassangerNo, flightPassangerName, flightNo, flightTicketNo, flightAmount);
+            FlightModel model = new FlightModel(id, flightFrom, flightTo, flightDate, flightNoofPass, fLightPassangerNo, flightPassangerName, flightNo, flightTicketNo, flightAmount);
             databaseReference.child(id).setValue(model);
+
             Intent intent = new Intent(FlightTicket.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something Went Wrong !!!!!!", Toast.LENGTH_SHORT).show();
         }

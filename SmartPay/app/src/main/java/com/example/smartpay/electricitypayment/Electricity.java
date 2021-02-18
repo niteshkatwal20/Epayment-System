@@ -107,8 +107,10 @@ public class Electricity extends AppCompatActivity {
         if (!TextUtils.isEmpty(eleCustomerName)) {
             ElectricityModel electricityModel = new ElectricityModel(id, eleCustomerName, eLeCustomerId, eleAmount, eleDepositerName, eleDepositerNumber);
             reference.child(id).setValue(electricityModel);
+
             Intent intent = new Intent(Electricity.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something Went Wrong !!!!!!", Toast.LENGTH_SHORT).show();
         }

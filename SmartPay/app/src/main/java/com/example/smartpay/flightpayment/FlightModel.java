@@ -1,16 +1,17 @@
 package com.example.smartpay.flightpayment;
 
 public class FlightModel {
-    String id, flightFrom, flightTo, flightDate, fLightPassangerNo, flightPassangerName, flightNo, flightTicketNo, flightAmount;
+    String id, flightFrom, flightTo, flightDate,flightNoofPass, fLightPassangerNo, flightPassangerName, flightNo, flightTicketNo, flightAmount;
 
     public FlightModel() {
     }
 
-    public FlightModel(String id, String flightFrom, String flightTo, String flightDate, String fLightPassangerNo, String flightPassangerName, String flightNo, String flightTicketNo, String flightAmount) {
+    public FlightModel(String id, String flightFrom, String flightTo, String flightDate, String flightNoofPass, String fLightPassangerNo, String flightPassangerName, String flightNo, String flightTicketNo, String flightAmount) {
         this.id = id;
         this.flightFrom = flightFrom;
         this.flightTo = flightTo;
         this.flightDate = flightDate;
+        this.flightNoofPass = flightNoofPass;
         this.fLightPassangerNo = fLightPassangerNo;
         this.flightPassangerName = flightPassangerName;
         this.flightNo = flightNo;
@@ -48,6 +49,14 @@ public class FlightModel {
 
     public void setFlightDate(String flightDate) {
         this.flightDate = flightDate;
+    }
+
+    public String getFlightNoofPass() {
+        return flightNoofPass;
+    }
+
+    public void setFlightNoofPass(String flightNoofPass) {
+        this.flightNoofPass = flightNoofPass;
     }
 
     public String getfLightPassangerNo() {

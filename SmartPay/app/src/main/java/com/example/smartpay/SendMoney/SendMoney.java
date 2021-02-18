@@ -101,8 +101,10 @@ public class SendMoney extends AppCompatActivity {
         if (!TextUtils.isEmpty(sendEmail)) {
             SendMoneyModel data = new SendMoneyModel(id, sendEmail, sendAmount, purpose, remarks);
             reference.child(id).setValue(data);
+
             Intent intent = new Intent(SendMoney.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

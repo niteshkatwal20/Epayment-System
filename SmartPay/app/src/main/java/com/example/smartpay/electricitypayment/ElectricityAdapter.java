@@ -34,11 +34,11 @@ public class ElectricityAdapter extends RecyclerView.Adapter<ElectricityAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ElectricityHolder holder, int position) {
-        holder.DepositorName.setText(modelArrayList.get(position).eleDepositerName);
-        holder.DepositorNumber.setText(modelArrayList.get(position).eleDepositerNumber);
-        holder.CustomerName.setText(modelArrayList.get(position).eleCustomerName);
-        holder.CustomerID.setText(modelArrayList.get(position).eLeCustomerId);
-        holder.Amount.setText(modelArrayList.get(position).eleAmount);
+        holder.DepositorName.setText(modelArrayList.get(position).getEleDepositerName());
+        holder.DepositorNumber.setText(modelArrayList.get(position).getEleDepositerNumber());
+        holder.CustomerName.setText(modelArrayList.get(position).getEleCustomerName());
+        holder.CustomerID.setText(modelArrayList.get(position).geteLeCustomerId());
+        holder.Amount.setText(modelArrayList.get(position).getEleAmount());
 
     }
 

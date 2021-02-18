@@ -93,8 +93,10 @@ public class Health extends AppCompatActivity {
         if (!TextUtils.isEmpty(hospitalname)) {
             HospitalModel data = new HospitalModel(id, hospitalname, patientname, hospitalbillno, hospitalbillamount);
             databaseReference.child(id).setValue(data);
+
             Intent intent = new Intent(Health.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

@@ -142,9 +142,11 @@ public class BusTicket extends AppCompatActivity {
         if (!TextUtils.isEmpty(passengername)) {
             BusModel busModel = new BusModel(id, from, to, passengername, noofpassenger, busname, ticketno, passangerno, busfare);
             databaseReference.child(id).setValue(busModel);
-//            Toast.makeText(this, "Your Transaction has been completed ", Toast.LENGTH_SHORT).show();
+
+
             Intent intent = new Intent(BusTicket.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something Went Wrong!!!!!!", Toast.LENGTH_SHORT).show();
         }

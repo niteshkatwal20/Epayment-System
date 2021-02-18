@@ -114,8 +114,10 @@ public class Hotels extends AppCompatActivity {
         if (!TextUtils.isEmpty(hotelName)) {
             HotelModel data = new HotelModel(id, hotelName, guestName, hotelBillno, roomNo, noOfperson, hotelBillamount, guestNumber);
             databaseReference.child(id).setValue(data);
+
             Intent intent = new Intent(Hotels.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong !!!!!", Toast.LENGTH_SHORT).show();
         }
