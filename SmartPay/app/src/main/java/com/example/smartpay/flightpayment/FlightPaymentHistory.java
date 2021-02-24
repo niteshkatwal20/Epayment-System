@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class FlightPaymentHistory extends AppCompatActivity {
 
 
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewPlan;
     private DatabaseReference reference;
     private ArrayList<FlightModel> arrayList;
     private FlightAdapter adapter;
@@ -30,9 +30,12 @@ public class FlightPaymentHistory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_payment_history);
 
-        recyclerView = findViewById(R.id.RycFlightHistory);
-        reference = FirebaseDatabase.getInstance().getReference().child("PlaneFare");
+        recyclerViewPlan = findViewById(R.id.RycFlightHistory);
+        reference = FirebaseDatabase.getInstance().getReference().child("Flight");
+
+        recyclerViewPlan.setLayoutManager(new LinearLayoutManager(this));
         arrayList = new ArrayList<FlightModel>();
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -41,7 +44,7 @@ public class FlightPaymentHistory extends AppCompatActivity {
                     arrayList.add(flightModel);
                 }
                 adapter = new FlightAdapter(FlightPaymentHistory.this, arrayList);
-                recyclerView.setAdapter(adapter);
+                recyclerViewPlan.setAdapter(adapter);
             }
 
             @Override

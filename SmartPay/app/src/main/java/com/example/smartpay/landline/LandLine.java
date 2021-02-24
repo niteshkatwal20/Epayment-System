@@ -41,10 +41,10 @@ public class LandLine extends AppCompatActivity {
         ClientId = findViewById(R.id.edtOwnerId);
         BillAmount = findViewById(R.id.edtPhoneAmount);
 
-        linearLayout=findViewById(R.id.PayPhoneBill);
+        linearLayout = findViewById(R.id.PayPhoneBill);
 
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        reference=firebaseDatabase.getReference("Landline");
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reference = firebaseDatabase.getReference("Landline");
 
 
         Back.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +100,7 @@ public class LandLine extends AppCompatActivity {
 
             Intent intent = new Intent(LandLine.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

@@ -15,7 +15,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
         android:text="ISP Name:"
         android:textColor="@color/white"
         android:textSize="17sp"
@@ -91,6 +90,7 @@
         android:layout_marginLeft="10dp"
         android:textColor="@color/white"
         android:textSize="17sp"
+        android:layout_marginBottom="30dp"
         android:textStyle="bold" />
 
 

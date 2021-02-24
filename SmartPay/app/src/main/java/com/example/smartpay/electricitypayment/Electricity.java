@@ -35,7 +35,7 @@ public class Electricity extends AppCompatActivity {
         ElecCustomerName = findViewById(R.id.edtElecCustomerName);
         ElecCustomerID = findViewById(R.id.edtElecCustomerId);
         ElecAmount = findViewById(R.id.edtelectricityamount);
-        ElecDepName = findViewById(R.id.edtElecDepositerNumber);
+        ElecDepName = findViewById(R.id.edtElecDepositerName);
         ElecDepNumber = findViewById(R.id.edtElecDepositerNumber);
 
         firebaseDatabase = FirebaseDatabase.getInstance();

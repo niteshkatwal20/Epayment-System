@@ -54,7 +54,7 @@ public class ElectricityAdapter extends RecyclerView.Adapter<ElectricityAdapter.
             super(itemView);
             CustomerName = (TextView) itemView.findViewById(R.id.txtCustomerNameElec);
             CustomerID = (TextView) itemView.findViewById(R.id.txtCustomerIdElec);
-            Amount = (TextView) itemView.findViewById(R.id.txtDepNameElec);
+            Amount = (TextView) itemView.findViewById(R.id.txtAmountElec);
             DepositorName = (TextView) itemView.findViewById(R.id.txtDepNameElec);
             DepositorNumber = (TextView) itemView.findViewById(R.id.txtDepNumberElec);
 

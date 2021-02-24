@@ -55,7 +55,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelHolder>
             super(itemView);
 
             HotelName = (TextView) itemView.findViewById(R.id.txtHotelName);
-            GuestName = (TextView) itemView.findViewById(R.id.txtHotelGuestNumber);
+            GuestName = (TextView) itemView.findViewById(R.id.txtBookingName);
             HotelBillAmount = (TextView) itemView.findViewById(R.id.txtHotelFare);
             HotelBillNo = (TextView) itemView.findViewById(R.id.txtHotelBillNo);
             RoomNo = (TextView) itemView.findViewById(R.id.txtHotelRoomNo);

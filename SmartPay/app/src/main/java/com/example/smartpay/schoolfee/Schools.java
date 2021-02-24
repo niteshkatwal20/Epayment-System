@@ -116,8 +116,10 @@ public class Schools extends AppCompatActivity {
         if (!TextUtils.isEmpty(studentName)) {
             SchoolModel data = new SchoolModel(id, schoolName, studentName, studentClass, billAmount, schooldepname, schooldepnum);
             reference.child(id).setValue(data);
+
             Intent intent = new Intent(Schools.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

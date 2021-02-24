@@ -3,6 +3,7 @@ package com.example.smartpay.user;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -24,9 +25,8 @@ public class SignIn extends AppCompatActivity {
 
     private TextView UserSignUp, forgetPassword, UserSignIn;
     private EditText Email, Password;
-
+    private ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
-    private ProgressBar progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class SignIn extends AppCompatActivity {
         Password = findViewById(R.id.edtPassword);
 
         mAuth = FirebaseAuth.getInstance();
-        progress = findViewById(R.id.ProgressbarSignIn);
+        progressDialog = new ProgressDialog(this);
 
         UserSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,23 +90,30 @@ public class SignIn extends AppCompatActivity {
             return;
         }
 
-        progress.setVisibility(View.VISIBLE);
+        progressDialog.setMessage("Logging in...");
+        progressDialog.show();
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
                     if (user.isEmailVerified()) {
+                        UserSignIn.setVisibility(View.INVISIBLE);
                         Intent intent = new Intent(SignIn.this, MainActivity.class);
+                        Toast.makeText(SignIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                         startActivity(intent);
                     } else {
                         user.sendEmailVerification();
                         Toast.makeText(SignIn.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();
+                        progressDialog.dismiss();
                     }
 
                 } else {
                     Toast.makeText(SignIn.this, "Email and Password do not match", Toast.LENGTH_LONG).show();
+                    progressDialog.dismiss();
                 }
             }
         });

@@ -97,8 +97,10 @@ public class MovieTicket extends AppCompatActivity {
         if (!TextUtils.isEmpty(movieName)) {
             MovieModel data = new MovieModel(id, hallName, movieName, customerName, noofSeats, movieTicketAmount);
             reference.child(id).setValue(data);
+
             Intent intent = new Intent(MovieTicket.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

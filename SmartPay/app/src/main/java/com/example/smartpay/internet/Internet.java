@@ -98,6 +98,7 @@ public class Internet extends AppCompatActivity {
 
             Intent intent = new Intent(Internet.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

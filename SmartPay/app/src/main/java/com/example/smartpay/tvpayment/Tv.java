@@ -111,8 +111,10 @@ public class Tv extends AppCompatActivity {
         if (!TextUtils.isEmpty(customerId)) {
             TvModel data = new TvModel(id, customerName, customerId, Tvamount, tvDepositername, tvDepositorNo);
             reference.child(id).setValue(data);
+
             Intent intent = new Intent(Tv.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }

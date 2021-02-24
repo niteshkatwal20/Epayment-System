@@ -170,7 +170,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/edtFlightPassangerNo"
+                android:id="@+id/edtFlightNoOfPassanger"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/head"
@@ -233,6 +233,24 @@
                 android:background="@drawable/edit_text_rounded"
                 android:gravity="center"
                 android:hint="Price"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtFlightPassengerNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="PassangerNO"
                 android:inputType="numberDecimal"
                 android:padding="16dp"
                 android:textColor="@color/Tex"

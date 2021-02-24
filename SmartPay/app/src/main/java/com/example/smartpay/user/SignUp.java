@@ -3,6 +3,7 @@ package com.example.smartpay.user;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -26,13 +27,14 @@ public class SignUp extends AppCompatActivity {
     private TextView SignIn, CreateAccount;
 
     private EditText Userfullname, Useremail, Userpassword, Userphoneno, Useraddress;
-    private ProgressBar progressBar;
-
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -44,7 +46,6 @@ public class SignUp extends AppCompatActivity {
         Userpassword = findViewById(R.id.txtUserPassword);
         Userphoneno = findViewById(R.id.txtUserphoneno);
         Useraddress = findViewById(R.id.txtUseraddress);
-        progressBar = findViewById(R.id.ProgressbarSignUp);
 
         CreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,14 +112,16 @@ public class SignUp extends AppCompatActivity {
             Useraddress.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-//                            User user = new User(fullname, email, password, phoneno, address);
-                            User user = new User(fullname, email,phoneno, address);
+                            User user = new User(fullname, email, phoneno, address);
+                            CreateAccount.setVisibility(View.INVISIBLE);
+                            progressDialog.setMessage("Registering...");
+                            progressDialog.show();
+
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -127,14 +130,17 @@ public class SignUp extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(SignUp.this, "User has been registered successfully", Toast.LENGTH_LONG)
                                                 .show();
-                                        progressBar.setVisibility(View.VISIBLE);
+                                        progressDialog.dismiss();
+                                        finish();
+//                                        progressBar.setVisibility(View.VISIBLE);
 
                                         Intent intent = new Intent(SignUp.this, SignIn.class);
                                         startActivity(intent);
                                     } else {
                                         Toast.makeText(SignUp.this, "Failed to register user", Toast.LENGTH_LONG)
                                                 .show();
-                                        progressBar.setVisibility(View.GONE);
+                                        progressDialog.dismiss();
+//                                        progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
@@ -142,7 +148,7 @@ public class SignUp extends AppCompatActivity {
                         } else {
                             Toast.makeText(SignUp.this, "Failed to register user", Toast.LENGTH_SHORT)
                                     .show();
-                            progressBar.setVisibility(View.GONE);
+//                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });

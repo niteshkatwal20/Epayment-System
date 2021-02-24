@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FlightTicket extends AppCompatActivity {
     private ImageView back;
-    private EditText from, to, date, noofpassanger, FlightNo, NameofPassenger, Passengerno, TicketNo, price;
+    private EditText Flightfrom, Flightto, Flightdate, noofpassanger, FlightNo, NameofPassenger, Passengerno, TicketNo, price;
     private LinearLayout payflight;
 
     private FirebaseDatabase database;
@@ -32,19 +32,20 @@ public class FlightTicket extends AppCompatActivity {
         setContentView(R.layout.activity_flight_ticket);
 
         back = findViewById(R.id.backFlight);
-        from = findViewById(R.id.edtFrom);
-        to = findViewById(R.id.edtTo);
-        date = findViewById(R.id.edtDate);
-        noofpassanger = findViewById(R.id.edtNoofPassanger);
+
+        Flightfrom = findViewById(R.id.edtFrom);
+        Flightto = findViewById(R.id.edtTo);
+        Flightdate = findViewById(R.id.edtDate);
+        noofpassanger = findViewById(R.id.edtFlightNoOfPassanger);
         price = findViewById(R.id.edtFlightAmount);
         payflight = findViewById(R.id.PayFlightTicket);
         FlightNo = findViewById(R.id.edtFlightNo);
         NameofPassenger = findViewById(R.id.edtTraveller);
         TicketNo = findViewById(R.id.edtFlightTicketNo);
-        Passengerno = findViewById(R.id.edtPassangerNumber);
+        Passengerno = findViewById(R.id.edtFlightPassengerNo);
 
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("PlaneFare");
+        databaseReference = database.getReference("Flight");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,53 +64,54 @@ public class FlightTicket extends AppCompatActivity {
     }
 
     private void PlaneFare() {
-        String flightFrom = from.getText().toString().trim();
-        String flightTo = to.getText().toString().trim();
-        String flightDate = date.getText().toString().trim();
-        String fLightPassangerNo = Passengerno.getText().toString().trim();
+        String flightFrom = Flightfrom.getText().toString().trim();
+        String flightTo = Flightto.getText().toString().trim();
+        String flightDate = Flightdate.getText().toString().trim();
+        String flightNoofPass = noofpassanger.getText().toString().trim();
+        String flightPassangerNo = Passengerno.getText().toString().trim();
         String flightPassangerName = NameofPassenger.getText().toString().trim();
         String flightNo = FlightNo.getText().toString().trim();
         String flightTicketNo = TicketNo.getText().toString().trim();
         String flightAmount = price.getText().toString().trim();
-        String flightNoofPass = noofpassanger.getText().toString().trim();
+
         String id = databaseReference.push().getKey();
 
 
-        if (fLightPassangerNo.isEmpty()) {
+        if (flightPassangerNo.isEmpty()) {
             Passengerno.setError("Please Enter the Depositor Number!");
             Passengerno.requestFocus();
             return;
 
         }
-        if (fLightPassangerNo.length() < 10) {
+        if (flightPassangerNo.length() < 10) {
             Passengerno.setError("Mobile Must be 10 digits");
             Passengerno.requestFocus();
             return;
         }
 
-        if (flightNoofPass.length() > 10) {
+        if (flightPassangerNo.length() > 10) {
             Passengerno.setError("Mobile Must be 10 digits");
             Passengerno.requestFocus();
             return;
         }
 
         if (flightFrom.isEmpty()) {
-            from.setError("Flied should be empty");
-            from.requestFocus();
+            Flightfrom.setError("Flied should be empty");
+            Flightfrom.requestFocus();
             return;
         }
         if (flightTo.isEmpty()) {
-            to.setError("Field should be empty");
-            to.requestFocus();
+            Flightto.setError("Field should be empty");
+            Flightto.requestFocus();
             return;
         }
 
         if (flightDate.isEmpty()) {
-            date.setError("Flied should be empty");
-            date.requestFocus();
+            Flightdate.setError("Flied should be empty");
+            Flightdate.requestFocus();
             return;
         }
-        if (fLightPassangerNo.isEmpty()) {
+        if (flightNoofPass.isEmpty()) {
             noofpassanger.setError("Flied should be empty");
             noofpassanger.requestFocus();
             return;
@@ -136,7 +138,7 @@ public class FlightTicket extends AppCompatActivity {
         }
 
         if (!TextUtils.isEmpty(flightFrom)) {
-            FlightModel model = new FlightModel(id, flightFrom, flightTo, flightDate, flightNoofPass, fLightPassangerNo, flightPassangerName, flightNo, flightTicketNo, flightAmount);
+            FlightModel model = new FlightModel(id, flightFrom, flightTo, flightDate, flightNoofPass, flightPassangerNo, flightPassangerName, flightNo, flightTicketNo, flightAmount);
             databaseReference.child(id).setValue(model);
 
             Intent intent = new Intent(FlightTicket.this, SendOTPActivity.class);

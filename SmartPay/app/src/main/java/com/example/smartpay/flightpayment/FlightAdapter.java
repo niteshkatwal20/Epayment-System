@@ -40,7 +40,7 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.FlightHold
         holder.FlightName.setText(arrayList.get(position).getFlightNo());
         holder.FlightTicketNo.setText(arrayList.get(position).getFlightTicketNo());
         holder.FlightDate.setText(arrayList.get(position).getFlightDate());
-        holder.FlightPassNo.setText(arrayList.get(position).getfLightPassangerNo());
+        holder.FlightPassNo.setText(arrayList.get(position).getFlightPassangerNo());
         holder.FlightTicketFare.setText(arrayList.get(position).getFlightAmount());
     }
 

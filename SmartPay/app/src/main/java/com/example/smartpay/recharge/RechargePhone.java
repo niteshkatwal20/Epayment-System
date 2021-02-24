@@ -95,8 +95,10 @@ public class RechargePhone extends AppCompatActivity {
         if (!TextUtils.isEmpty(rechargeMobileNo)) {
             RechargeModel data = new RechargeModel(id, rechargeMobileNo, rechageAmount);
             reference.child(id).setValue(data);
+
             Intent intent = new Intent(RechargePhone.this, SendOTPActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }
