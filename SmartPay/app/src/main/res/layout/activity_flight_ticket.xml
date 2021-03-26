@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".flightpayment.FlightTicket">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/backFlight"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:paddingRight="360dp"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:text="title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimary"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/logo_icon"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:src="@drawable/logo2"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/grey_rounded_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Pay For Your Flight Ticket"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="#000000" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:text="From"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edtFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Eg.kathmandu"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:text="To"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edtTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Eg.Biratnagar"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Date"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+
+            <EditText
+                android:id="@+id/edtTraveller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Name of persons"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtFlightNoOfPassanger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="No Of Passenger"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtFlightNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Flight No"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtFlightTicketNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Ticket No"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtFlightAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtFlightPassengerNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:gravity="center"
+                android:hint="PassangerNO"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textColor="@color/Tex"
+                android:textColorHint="@color/textSub"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/PayFlightTicket"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_rounded_bg"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Pay Now"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

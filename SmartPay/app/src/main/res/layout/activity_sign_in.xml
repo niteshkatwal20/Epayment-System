@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".SignIn">
+    tools:context=".user.SignIn">
+
     <ImageView
         android:id="@+id/head"
         android:layout_width="150dp"
@@ -84,7 +85,6 @@
                     android:gravity="left"
                     android:hint="Email"
                     android:lines="1"
-                    android:padding="10dp"
                     android:textColor="@color/Tex"
                     android:textColorHint="@color/textSub"
                     android:textSize="16sp" />
@@ -114,13 +114,9 @@
                     android:drawablePadding="16dp"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:padding="10dp"
                     android:textColor="@color/Tex"
                     android:textColorHint="@color/textSub"
-                    android:textSize="16sp"
-
-
-                    />
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
@@ -175,7 +171,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
-
                     android:gravity="right"
                     android:padding="10dp"
                     android:text="Forgot password?"
@@ -185,9 +180,18 @@
 
             </RelativeLayout>
 
+            <ProgressBar
+                android:id="@+id/ProgressbarSignIn"
+                style="?android:attr/progressBarStyleLarge"
+               android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                />
 
             <TextView
-                android:id="@+id/signin1"
+                android:id="@+id/UserSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/signinline"
@@ -231,7 +235,7 @@
             />
 
         <TextView
-            android:id="@+id/signup"
+            android:id="@+id/SigUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
